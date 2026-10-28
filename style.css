@@ -1,0 +1,272 @@
+
+
+        /* =====================================
+           CONFIGURAÇÕES GERAIS
+        ===================================== */
+
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-secondary: #94a3b8;
+            --accent: #818cf8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            background: var(--bg-primary);
+            color: white;
+
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* =====================================
+           CABEÇALHO
+        ===================================== */
+
+        .site-header {
+            text-align: center;
+            padding: 35px 15px;
+
+            background: linear-gradient(
+                135deg,
+                #312e81,
+                #1e1b4b,
+                #0f172a
+            );
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .header-icon {
+            font-size: 40px;
+            color: #facc15;
+        }
+
+        .site-header h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .site-header p {
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        /* =====================================
+           CONTEÚDO PRINCIPAL
+        ===================================== */
+
+        main {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 12px;
+        }
+
+        .ranking-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* =====================================
+           CARTÃO
+        ===================================== */
+
+        .ranking-card {
+            background: var(--bg-secondary);
+
+            border-radius: 18px;
+            padding: 25px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+        }
+
+        .ranking-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .ranking-title h2 {
+            font-size: clamp(1.25rem, 3vw, 1.7rem);
+            font-weight: 700;
+        }
+
+        .ranking-title p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* =====================================
+           ÁREA DO EXCEL
+        ===================================== */
+
+        .excel-container {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        /*
+         * A área preta acompanha o zoom.
+         * O JavaScript calcula suas dimensões.
+         */
+
+        .excel-viewport {
+            width: 527px;
+            height: 400px;
+
+            position: relative;
+            overflow: hidden;
+
+            background: #000;
+            border-radius: 8px;
+
+            flex-shrink: 0;
+        }
+
+        /*
+         * O iframe mantém as dimensões originais.
+         * O zoom é aplicado via JavaScript.
+         */
+
+        .excel-frame {
+            position: absolute;
+
+            width: 527px;
+            height: 400px;
+
+            top: 0;
+            left: 0;
+
+            border: none;
+
+            transform-origin: top left;
+
+            pointer-events: none;
+        }
+
+        /* =====================================
+           STATUS DA ATUALIZAÇÃO
+        ===================================== */
+
+        .update-info {
+            margin-top: 20px;
+
+            text-align: center;
+            font-size: 0.8rem;
+
+            color: var(--text-secondary);
+        }
+
+        .status-indicator {
+            display: inline-block;
+
+            width: 8px;
+            height: 8px;
+
+            background: #22c55e;
+            border-radius: 50%;
+
+            margin-right: 5px;
+        }
+
+        /* =====================================
+           RODAPÉ
+        ===================================== */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* =====================================
+           RESPONSIVIDADE
+        ===================================== */
+
+        /* CELULARES */
+
+        @media (max-width: 575.98px) {
+
+            .site-header {
+                padding: 25px 12px;
+            }
+
+            main {
+                padding: 20px 10px;
+            }
+
+            .ranking-card {
+                padding: 15px 10px;
+                border-radius: 12px;
+            }
+
+            .ranking-title {
+                margin-bottom: 15px;
+            }
+        }
+
+        /* TABLETS PEQUENOS */
+
+        @media (min-width: 576px) {
+
+            .ranking-card {
+                padding: 25px;
+            }
+        }
+
+        /* TABLETS */
+
+        @media (min-width: 768px) {
+
+            .ranking-card {
+                padding: 30px;
+            }
+        }
+
+        /* COMPUTADORES */
+
+        @media (min-width: 992px) {
+
+            .ranking-card {
+                padding: 35px;
+            }
+        }
+
+        /* TELAS GRANDES */
+
+        @media (min-width: 1200px) {
+
+            .ranking-wrapper {
+                max-width: 1100px;
+            }
+        }
