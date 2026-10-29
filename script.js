@@ -30,7 +30,7 @@
             zoom: 1.5,
 
             // ATUALIZAÇÃO A CADA 1 MINUTO
-            intervaloAtualizacao: 60000
+            intervaloAtualizacao: 15000
 
         };
 
